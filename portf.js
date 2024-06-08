@@ -26,3 +26,29 @@ window.onscroll = ()=>{
     menubar.classList.remove('bx-x');
     Navbar.classList.remove('active')
 }
+document.getElementById('submitButton').addEventListener('click', function() {
+    // Get the form values
+    const fullName = document.getElementById('fullName').value;
+    const email = document.getElementById('email').value;
+    const mobileNumber = document.getElementById('mobileNumber').value;
+    const subject = document.getElementById('subject').value;
+    const message = document.getElementById('message').value;
+
+    // Save the data (you can replace this with actual storage logic, e.g., sending data to a server)
+    const formData = {
+        fullName,
+        email,
+        mobileNumber,
+        subject,
+        message
+    };
+    console.log('Form Data:', formData);
+
+    // Display the success message
+    document.getElementById('successMessage').style.display = 'block';
+
+    // Optionally, clear the form fields
+    document.getElementById('contactForm').reset();
+});
+
+
